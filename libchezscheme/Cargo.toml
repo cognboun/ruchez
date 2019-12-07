@@ -1,8 +1,10 @@
 [package]
-name = "ruchez"
+name = "libchezscheme"
 version = "0.1.0"
 authors = ["cognboun <cognboun@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-libchezscheme = { version = "0.1.0", path = "./libchezscheme" }
+
+[build-dependencies]
+bindgen = { version = "0.51.0"}

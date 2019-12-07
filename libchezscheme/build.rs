@@ -3,7 +3,8 @@ extern crate bindgen;
 use std::env;
 use std::path::PathBuf;
 
-const LIB_NAME: &str = "chezscheme";
+//const LIB_NAME: &str = "chezscheme";
+const LIB_NAME: &str = "kernel";
 const LIB_PATH: &str = "chezscheme";
 
 fn main() {
@@ -21,4 +22,7 @@ fn main() {
 
     println!("cargo:rustc-link-search={}", lib_path.display());
     println!("cargo:rustc-link-lib=static={}", LIB_NAME);
+    println!("cargo:rustc-link-lib=z"); // default =dylib
+    println!("cargo:rustc-link-lib=iconv"); // default =dylib
+    println!("cargo:rustc-link-lib=ncurses"); // default =dylib
 }
